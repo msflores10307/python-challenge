@@ -21,14 +21,17 @@ with open(data_path) as csvfile:
     for row in csv_reader:
         emp_id.append(row[0])
 
+        # creates arrays with first name and last name
         name = row[1]
         fname.append(name.split()[0])
         lname.append(name.split()[1])
 
+        # creates arrays of reformatted dates
         raw_dob = (row[2]) # YYYY-MM-DD
         dob = raw_dob.split('-')
         DOB.append(f"{dob[1]}/{dob[2]}/{dob[0]}")
 
+        # Creates array of reformatted SSNs
         raw_ssn = row[3]
         ssn = raw_ssn.split('-')
         SSN.append(f"***-**-{ssn[2]}")
